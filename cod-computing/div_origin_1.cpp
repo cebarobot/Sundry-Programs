@@ -88,6 +88,7 @@ int main() {
     printf("|:-|:-|:-|\n");
     int acc = xxx;
     int mq = 0;
+    bool overflow_flag = false;
 
     col_acc += print_binary(acc, nnn + 1, 1, 2, 0);
     col_acc += "<br>";
@@ -104,7 +105,7 @@ int main() {
             col_acc += "<br>";
             col_mq += print_binary(mq, i + 1, 0, 0, 1, nnn + 1);
             col_mq += "<br>";
-            col_note += "$\\to 1$ 位<br>";
+            col_note += "$\\gets 1$ 位<br>";
         }
         if (reminder_pos) {
             acc -= yyy;
@@ -123,6 +124,15 @@ int main() {
 
         reminder_pos = !((acc >> nnn) & 1);
         if (reminder_pos) {
+            if (i == 0) {
+                overflow_flag = true;
+                col_acc += print_binary(acc, nnn + 1, 1, 2, 0);
+                col_acc += "<br>";
+                col_mq += "<br>";
+                col_note += "余数为正，溢出<br>";
+                print_line(col_acc, col_mq, col_note);
+                return 0;
+            }
             mq = b_replace(mq, 1, 1);
             col_acc += print_binary(acc, nnn + 1, 1, 2, 0);
             col_acc += "<br>";
@@ -137,6 +147,19 @@ int main() {
             col_mq += "<br>";
             col_note += "余数为负，上商“0”<br>";
         }
+    }
+
+    if (!reminder_pos) {
+        acc += yyy;
+        col_acc += print_binary(yyy, nnn + 1, 1, 1, 0);
+        col_acc += "<br>";
+        col_mq += "<br>";
+        col_note += "$+[y^*]_{补}$（加除数），（恢复余数）<br>";
+        print_line(col_acc, col_mq, col_note);
+        col_acc += print_binary(acc, nnn + 1, 1, 2, 0);
+        col_acc += "<br>";
+        col_mq += print_binary(mq, nnn + 1, 0, 0, 0, nnn + 1);
+        col_mq += "<br>";
     }
     print_line(col_acc, col_mq, col_note);
 
