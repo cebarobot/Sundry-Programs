@@ -78,12 +78,11 @@ int main() {
     string col_cc;
     string col_note;
 
-    int xxx = 11;
-    int yyy = 13;
-    int nnn = 4;
-    printf("%s\n", print_binary(-yyy, 5, 1, 1, 0).c_str());
-
-    printf("%X\n", (unsigned)-1);
+    int xxx;
+    int yyy;
+    int nnn;
+    printf("依次输入xxx, yyy, nnn: ");
+    scanf("%d %d %d", &xxx, &yyy, &nnn);
 
     printf("|被除数（余数）|商|说明|\n");
     printf("|:-|:-|:-|\n");
