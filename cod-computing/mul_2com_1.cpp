@@ -74,6 +74,9 @@ int main() {
     int xxx = 27;
     int yyy = -29;
     int nnn = 5;
+    
+    printf("依次输入xxx, yyy, nnn: ");
+    scanf("%d %d %d", &xxx, &yyy, &nnn);
     // int xxx = 13;
     // int yyy = 11;
     // int nnn = 4;
@@ -81,9 +84,9 @@ int main() {
     // int yyy = -21;
     // int nnn = 6;
 
-    printf("$[x]_{补} = $，$[y]_{补} = $。\n\n");
+    // printf("$[x]_{补} = $，$[y]_{补} = $。\n\n");
 
-    printf("补码一位乘（Booth 算法）的运算过程：\n");
+    // printf("补码一位乘（Booth 算法）的运算过程：\n");
 
     printf("|部分积|乘数 $y_n$|附加位 $y_{n+1}$|说明|\n");
     printf("|:-|:-|:-|:-|\n");
@@ -185,7 +188,7 @@ int main() {
     col_note += "最后一步不位移，得 $[x \\cdot y]_{补}$<br>";
     print_line(col_acc, col_mq, col_cc, col_note);
 
-    printf("\n故 $[x \\cdot y]_{补} = $。\n\n");
-    printf("那么 $x \\cdot y = $。\n\n");
+    // printf("\n故 $[x \\cdot y]_{补} = $。\n\n");
+    // printf("那么 $x \\cdot y = $。\n\n");
     return 0;
 }
