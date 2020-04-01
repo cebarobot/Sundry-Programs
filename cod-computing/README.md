@@ -5,3 +5,4 @@
 
 * [mul_origin_1.cpp](mul_origin_1.cpp)：生成 1 位原码乘法计算过程。
 * [mul_2com_1.cpp](mul_2com_1.cpp)：生成 1 位补码乘法计算过程。
+* [div_origin_1.cpp](div_origin_1.cpp)：生成原码除法加减交替法的计算过程。
