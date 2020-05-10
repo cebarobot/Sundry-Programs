@@ -1,3 +1,4 @@
+// 乘法：补码比较法 1 位乘
 #include <iostream>
 #include <cstring>
 #include <cstdio>
